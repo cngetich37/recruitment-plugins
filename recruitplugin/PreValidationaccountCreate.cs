@@ -60,17 +60,15 @@ namespace cngetich.recruitplugin
                 // Obtain the organization service reference for web service calls.  
                 IOrganizationService currentUserService = localContext.CurrentUserService;
 
-                // TODO: Implement your custom Plug-in business logic.
+                // Custom Plug-in business logic.
                 if (context.InputParameters.Contains("Target") && context.InputParameters["Target"] is Entity entity)
                 {
                     if (!entity.Attributes.Contains("name") || string.IsNullOrWhiteSpace(entity["name"]?.ToString()))
                     {
                         throw new InvalidPluginExecutionException("Account name is required.");
                     }
-                    
                 }
-                
-                if(context.InputParameters.Contains("Target") && context.InputParameters["Target"] is Entity accountEntity)
+                if (context.InputParameters.Contains("Target") && context.InputParameters["Target"] is Entity accountEntity)
                 {
                     if (accountEntity.Attributes.Contains("telephone1") && !string.IsNullOrWhiteSpace(accountEntity["telephone1"]?.ToString()))
                     {
@@ -81,13 +79,16 @@ namespace cngetich.recruitplugin
                         }
                     }
                 }
-
             }
-            // Only throw an InvalidPluginExecutionException. Please Refer https://go.microsoft.com/fwlink/?linkid=2153829.
+            catch (InvalidPluginExecutionException)
+            {
+                // Rethrow so the custom message is shown to the user
+                throw;
+            }
             catch (Exception ex)
             {
-                tracingService?.Trace("An error occurred executing Plugin cngetich.recruitplugin.PreValidationaccountCreate : {0}", ex.ToString());
-                throw new InvalidPluginExecutionException("An error occurred executing Plugin cngetich.recruitplugin.PreValidationaccountCreate .", ex);
+                tracingService?.Trace("An unexpected error occurred: {0}", ex.ToString());
+                throw new InvalidPluginExecutionException("An unexpected error occurred: " + ex.Message);
             }
         }
     }
