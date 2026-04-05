@@ -12,6 +12,14 @@
             </Step>
           </Steps>
         </Plugin>
+        <Plugin Description="Plug-in to Create of cra2a_role" FriendlyName="Create of cra2a_role" Name="cngetich.recruitplugin.PreValidationcra2a_roleCreate" Id="258f2257-14f1-4a89-8ae9-ac48b9602ebc" TypeName="cngetich.recruitplugin.PreValidationcra2a_roleCreate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="Create of cra2a_role" Description="Create of cra2a_role" Id="ee0d0c6a-ee30-f111-88b5-0022489d3371" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Create" Mode="Synchronous" PrimaryEntityName="cra2a_role" Rank="1" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
       </PluginTypes>
     </Solution>
   </Solutions>
