@@ -1,0 +1,10 @@
+<Solution>
+  <Project Path="CrmPackage/CrmPackage.csproj">
+    <BuildDependency Project="recruitplugin/recruitplugin.csproj" />
+    <Deploy />
+  </Project>
+  <Project Path="recruitplugin/recruitplugin.csproj" />
+  <Properties Name="CRMSolutionProperties">
+    <Property Name="SolutionIsBoundToCRM" Value="True" />
+  </Properties>
+</Solution>

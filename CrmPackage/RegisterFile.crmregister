@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Register xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/crm/2011/tools/pluginregistration">
+  <Solutions>
+    <Solution Assembly="cngetich.recruitplugin.dll" Id="fd1ea4e3-8d0b-42ec-a2a5-342c8ebbaf49" IsolationMode="Sandbox" SourceType="Database">
+      <PluginTypes>
+        <clear />
+        <Plugin Description="Plug-in to Create of account" FriendlyName="Create of account" Name="cngetich.recruitplugin.PreValidationaccountCreate" Id="739e209f-5896-44b2-9c51-26e174109dde" TypeName="cngetich.recruitplugin.PreValidationaccountCreate">
+          <Steps>
+            <clear />
+            <Step AsyncAutoDelete="false" Name="Create of account" Description="Create of account" Id="1437b82c-d930-f111-88b5-0022489d3371" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Create" Mode="Synchronous" PrimaryEntityName="account" Rank="1" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+      </PluginTypes>
+    </Solution>
+  </Solutions>
+  <XamlWorkflows />
+  <DataProviders />
+</Register>
